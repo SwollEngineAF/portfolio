@@ -67,3 +67,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+.typewrite > .wrap {
+  border-right: 0.08em solid #fff; /* The blinking cursor */
+  animation: blink-caret 0.7s step-end infinite; /* Blinking effect */
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
