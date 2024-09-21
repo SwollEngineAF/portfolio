@@ -3,9 +3,12 @@ import Component from '@/components/component';
 
 const HomePage = () => {
   return (
+    <main className="relative 
+    bg-black">
     <div>
       <Component/>
     </div>
+    </main>
   );
 };
 

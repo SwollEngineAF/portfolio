@@ -1,3 +1,4 @@
+
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import { FC, useRef } from 'react';
@@ -40,3 +41,4 @@ const HeroSection: FC<HeroSectionProps> = () => {
 };
 
 export default HeroSection;
+

@@ -1,5 +1,6 @@
 "use client";
 
+
 import { useState, useEffect } from "react";
 import HeroSection from "./herosection";
 import AboutMe from "./aboutme";
