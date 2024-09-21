@@ -9,6 +9,7 @@ import { useState, useEffect, JSX, SVGProps} from "react"
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card"
 import Link from "next/link"
 import { Toggle } from "@/components/ui/toggle"
+import HeroSection from "./herosection"
 
 export default function Component() {
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -32,6 +33,7 @@ export default function Component() {
       }`}
     >
       <main className="container mx-auto px-4 md:px-6 py-12 md:py-20 flex flex-col gap-12 md:gap-16">
+      <HeroSection />
         <section className="bg-muted rounded-lg p-6 md:p-8 shadow-lg">
           <div className="grid md:grid-cols-[1fr_400px] gap-8 md:gap-12">
             <div className="space-y-4">
