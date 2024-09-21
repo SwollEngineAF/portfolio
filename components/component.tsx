@@ -10,6 +10,8 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/componen
 import Link from "next/link"
 import { Toggle } from "@/components/ui/toggle"
 import HeroSection from "./herosection"
+import Image from 'next/image'
+
 
 export default function Component() {
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -60,13 +62,12 @@ export default function Component() {
               </p>
             </div>
             <div className="rounded-xl overflow-hidden">
-              <img
+              <Image
                 src="/placeholder.svg"
                 width={400}
                 height={400}
                 alt="John Doe"
                 className="w-full h-full object-cover"
-                style={{ aspectRatio: "400/400", objectFit: "cover" }}
               />
             </div>
           </div>
