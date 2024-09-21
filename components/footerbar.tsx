@@ -6,7 +6,7 @@ type FooterBarProps = {
 
 const FooterBar: React.FC<FooterBarProps> = ({ toggleDarkMode }) => {
   return (
-    <div className="sticky bottom-0 left-0 w-full bg-muted rounded-lg p-4 flex justify-between items-center shadow-lg">
+    <div className="sticky bottom-0 left-0 w-full bg-muted dark:bg-white rounded-lg p-4 flex justify-between items-center shadow-lg z-50">
       {/* Email link */}
       <div className="flex items-center gap-2">
         <MailIcon className="h-6 w-6" />
@@ -31,15 +31,14 @@ const FooterBar: React.FC<FooterBarProps> = ({ toggleDarkMode }) => {
         </a>
       </div>
 
-
-
-      {/* Dark mode toggle button */}
+      {/* Dark mode toggle button with "Dark Mode" text */}
       <button
         onClick={toggleDarkMode}
         aria-label="Toggle dark mode"
-        className="p-2 rounded-md focus:outline-none"
+        className="p-2 rounded-md focus:outline-none flex items-center gap-2"
       >
         <SunMoonIcon className="h-6 w-6" />
+        <span className="hidden sm:inline">Dark Mode</span>
       </button>
     </div>
   );
