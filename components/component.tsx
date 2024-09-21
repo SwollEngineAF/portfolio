@@ -10,7 +10,6 @@ import FooterBar from "./footerbar";
 
 export default function Component() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [typewriterText, setTypewriterText] = useState("SCADA Engineer");
 
   // Load theme preference from localStorage
   useEffect(() => {
@@ -19,17 +18,6 @@ export default function Component() {
       setIsDarkMode(true);
       document.documentElement.classList.add("dark");
     }
-  }, []);
-
-  // Handle typewriter effect
-  useEffect(() => {
-    const typewriterTexts = ["SCADA Engineer", "UI Developer", "IT/OT Hybrid Engineer", "Cybersecurity N00b"];
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      setTypewriterText(typewriterTexts[currentIndex]);
-      currentIndex = (currentIndex + 1) % typewriterTexts.length;
-    }, 2000);
-    return () => clearInterval(interval);
   }, []);
 
   // Toggle dark mode
