@@ -59,11 +59,20 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
+/* Typewriter cursor for light mode */
+.typewrite > .wrap {
+  border-right: 0.08em solid #000; /* Dark cursor for light mode */
+  animation: blink-caret 0.7s step-end infinite;
+}
+
+/* Typewriter cursor for dark mode */
+.dark .typewrite > .wrap {
+  border-right: 0.08em solid #fff; /* Light cursor for dark mode */
+}
+
+/* Blinking animation */
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
   }
 }
