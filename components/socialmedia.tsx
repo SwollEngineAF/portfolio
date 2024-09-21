@@ -33,7 +33,6 @@ const SocialMedia = () => {
       <div className="space-y-4">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Links</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-
           {/* GitHub with modal */}
           <Modal>
             <ModalTrigger className="bg-background rounded-lg p-4 flex items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm cursor-pointer">
