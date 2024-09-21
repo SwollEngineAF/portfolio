@@ -15,16 +15,16 @@ const SocialMedia = () => {
     {
       title: "University GitHub",
       description: "Visit abin733 GitHub",
+      href: "https://github.com/abin733",
       src: "/assets/githubabin733.webp", // Path to local image for university GitHub
       className: "bg-blue-500 text-white",
-      onClick: () => window.open("https://github.com/abin733", "_blank"), // Open the link in a new tab
     },
     {
       title: "Personal GitHub",
       description: "Visit SwollEngineAF GitHub",
+      href: "https://github.com/SwollEngineAF",
       src: "/assets/githubswollengineaf.webp", // Path to local image for personal GitHub
       className: "bg-amber-500 text-white",
-      onClick: () => window.open("https://github.com/SwollEngineAF", "_blank"), // Open the link in a new tab
     },
   ];
 
@@ -62,7 +62,7 @@ const SocialMedia = () => {
                   Select a GitHub Profile
                 </h4>
                 {/* GitHub profiles using FocusCards */}
-                <FocusCards cards={cards} />
+                <div className="justify-evenly"><FocusCards cards={cards} /></div>
               </ModalContent>
               <ModalFooter className="flex justify-center">
                 <button className="bg-gray-400 dark:bg-gray-600 text-white px-4 py-2 rounded-md">
