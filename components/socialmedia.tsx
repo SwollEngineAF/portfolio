@@ -33,22 +33,6 @@ const SocialMedia = () => {
       <div className="space-y-4">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Links</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <a href="https://www.instagram.com/hiidrasidi/" className="bg-background rounded-lg p-4 flex items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm">
-            <FaInstagram className="h-6 w-6 text-gray-800 dark:text-gray-200" />
-            <span className="text-gray-800 dark:text-gray-200">Instagram</span>
-          </a>
-          <a href="https://x.com/syrslah" className="bg-background rounded-lg p-4 flex items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm">
-            <FaXTwitter className="h-6 w-6 text-gray-800 dark:text-gray-200" />
-            <span className="text-gray-800 dark:text-gray-200">X</span>
-          </a>
-          <a href="https://www.facebook.com/hiidrasidi/" className="bg-background rounded-lg p-4 flex items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm">
-            <FaFacebook className="h-6 w-6 text-gray-800 dark:text-gray-200" />
-            <span className="text-gray-800 dark:text-gray-200">Facebook</span>
-          </a>
-          <a href="https://www.linkedin.com/in/syahiidrasidi/" className="bg-background rounded-lg p-4 flex items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm">
-            <FaLinkedin className="h-6 w-6 text-gray-800 dark:text-gray-200" />
-            <span className="text-gray-800 dark:text-gray-200">LinkedIn</span>
-          </a>
 
           {/* GitHub with modal */}
           <Modal>
@@ -64,13 +48,48 @@ const SocialMedia = () => {
                 {/* GitHub profiles using FocusCards */}
                 <div className="justify-evenly"><FocusCards cards={cards} /></div>
               </ModalContent>
-              <ModalFooter className="flex justify-center">
-                <button className="bg-gray-400 dark:bg-gray-600 text-white px-4 py-2 rounded-md">
-                  Close
-                </button>
-              </ModalFooter>
             </ModalBody>
           </Modal>
+        <a 
+          href="https://www.linkedin.com/in/syahiidrasidi/" 
+          className="bg-background rounded-lg p-4 flex items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm"
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <FaLinkedin className="h-6 w-6 text-gray-800 dark:text-gray-200" />
+          <span className="text-gray-800 dark:text-gray-200">LinkedIn</span>
+        </a>
+
+        <a 
+          href="https://www.facebook.com/hiidrasidi/" 
+          className="bg-background rounded-lg p-4 flex items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm"
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <FaFacebook className="h-6 w-6 text-gray-800 dark:text-gray-200" />
+          <span className="text-gray-800 dark:text-gray-200">Facebook</span>
+        </a>
+
+        <a 
+          href="https://www.instagram.com/hiidrasidi/" 
+          className="bg-background rounded-lg p-4 flex items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm"
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <FaInstagram className="h-6 w-6 text-gray-800 dark:text-gray-200" />
+          <span className="text-gray-800 dark:text-gray-200">Instagram</span>
+        </a>
+
+        <a 
+          href="https://x.com/syrslah" 
+          className="bg-background rounded-lg p-4 flex items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm"
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <FaXTwitter className="h-6 w-6 text-gray-800 dark:text-gray-200" />
+          <span className="text-gray-800 dark:text-gray-200">X</span>
+        </a>
+
         </div>
       </div>
     </section>
