@@ -26,9 +26,9 @@ const AboutMe = () => {
 
   return (
     <section id="about-me" className="bg-transparent rounded-lg p-6 md:p-8 shadow-lg">
-      <div className="flex flex-col md:flex-row items-center md:items-start justify-between space-y-4 md:space-y-0">
-        {/* Text section */}
-        <div className="w-full md:w-1/2">
+      <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between md:space-x-10 space-y-6 md:space-y-0">
+        {/* Left section: Typewriter + Copywriting */}
+        <div className="relative z-10 w-full md:w-1/2">
           <h1 className="text-3xl md:text-4xl text-gray-900 dark:text-gray-100 font-bold">
             I am {" "}
             <Typewriter
@@ -38,32 +38,30 @@ const AboutMe = () => {
               className="text-3xl md:text-4xl"
             />
           </h1>
-            {/* Copywriting section */}
-            <div className="mt-6 text-gray-700 dark:text-gray-300">
-              <p className="text-lg md:text-xl leading-relaxed">
-                With a strong background in engineering and technology, I am passionate about solving real-world challenges through innovative solutions. My expertise spans multiple domains, from industrial automation and SCADA systems to cutting-edge frontend development.
-              </p>
-              <p className="text-lg md:text-xl leading-relaxed mt-4">
-                I believe in lifelong learning, continuous improvement, and staying ahead of the technological curve.
-              </p>
-            </div>
+          {/* Copywriting section */}
+          <div className="mt-6 text-gray-700 dark:text-gray-300">
+            <p className="text-lg md:text-xl leading-relaxed">
+              With a strong background in engineering and technology, I am passionate about solving real-world challenges through innovative solutions. My expertise spans multiple domains, from industrial automation and SCADA systems to cutting-edge frontend development.
+            </p>
+            <p className="text-lg md:text-xl leading-relaxed mt-4">
+              I believe in lifelong learning, continuous improvement, and staying ahead of the technological curve.
+            </p>
+          </div>
         </div>
 
-        {/* Image section */}
-        <div className="w-full md:w-1/2 flex justify-end">
-          <div className="relative w-80 h-80"> {/* Adjust height for responsiveness */}
+        {/* Right section: Image always fills div */}
+        <div className="relative w-full md:w-1/2 flex justify-center">
+          <div className="relative w-full h-[400px] md:h-[500px]">  {/* Adjust height for responsiveness */}
             <Image
               src={images[currentImageIndex]} // Display the current image
               alt={texts[currentImageIndex]}
               layout="fill" // Ensures the image fills the container
-              objectFit="contain" // Ensures the image is not cropped
+              objectFit="cover" // Ensures the image fills the div and keeps aspect ratio
               className="rounded-lg shadow-md"
             />
           </div>
         </div>
       </div>
-
-
     </section>
   );
 };
