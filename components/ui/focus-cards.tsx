@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
+import { redirect } from "next/navigation";
 
 export const Card = React.memo(
   ({
