@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import HeroSection from "./herosection";
 import AboutMe from "./aboutme";
 import Skills from "./skills";
-import RecentProjects from "./recentprojects";
+import { RecentProjects } from "./recentprojects";
 import SocialMedia from "./socialmedia";
 import FooterBar from "./footerbar";
 
