@@ -45,7 +45,7 @@ const SocialMedia = () => {
                   Select a GitHub Profile
                 </h4>
                 {/* GitHub profiles using FocusCards */}
-                <div className="justify-evenly"><FocusCards cards={cards} /></div>
+                <FocusCards cards={cards} />
               </ModalContent>
             </ModalBody>
           </Modal>
@@ -88,7 +88,6 @@ const SocialMedia = () => {
           <FaXTwitter className="h-6 w-6 text-gray-800 dark:text-gray-200" />
           <span className="text-gray-800 dark:text-gray-200">X</span>
         </a>
-
         </div>
       </div>
     </section>
