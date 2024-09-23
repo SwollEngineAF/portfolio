@@ -1,14 +1,23 @@
 import { MdAlternateEmail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import { CgDarkMode } from "react-icons/cg";
+import { FaUserCircle } from "react-icons/fa"; // Import a user icon or any icon of your choice
 
-type FooterBarProps = {
+type NavBarProps = {
   toggleDarkMode: () => void;
 };
 
-const FooterBar: React.FC<FooterBarProps> = ({ toggleDarkMode }) => {
+const NavBar: React.FC<NavBarProps> = ({ toggleDarkMode }) => {
   return (
-    <div className="sticky bottom-0 left-0 w-full bg-muted dark:bg-white rounded-lg p-4 flex justify-between items-center shadow-lg z-50">
+    <div className="sticky top-0 z-50 w-full bg-muted dark:bg-white p-4 flex justify-between items-center shadow-lg">
+      {/* Name with Icon */}
+      <div className="flex items-center gap-2">
+        <FaUserCircle className="h-6 w-6 text-black" />
+        <span className="text-lg font-bold text-black">
+          Syahiid Rasidi
+        </span>
+      </div>
+
       {/* Email link */}
       <div className="flex items-center gap-2">
         <a 
@@ -16,7 +25,7 @@ const FooterBar: React.FC<FooterBarProps> = ({ toggleDarkMode }) => {
           className="text-blue-500 hover:underline flex items-center gap-2"
         >
           <MdAlternateEmail className="h-6 w-6 text-black" /> {/* Icon always visible */}
-          <span className="hidden sm:inline">syahiid.rasidi@gmail.com</span> {/* Text only on large screens */}
+          <span className="hidden sm:inline">syahiid.rasidi@gmail.com</span>
         </a>
       </div>
 
@@ -29,11 +38,11 @@ const FooterBar: React.FC<FooterBarProps> = ({ toggleDarkMode }) => {
           className="text-blue-500 hover:underline flex items-center gap-2"
         >
           <FaWhatsapp className="h-6 w-6 text-black" /> {/* Icon always visible */}
-          <span className="hidden sm:inline">+60-17-6130-396</span> {/* Text only on large screens */}
+          <span className="hidden sm:inline">+60-17-6130-396</span>
         </a>
       </div>
 
-      {/* Dark mode toggle button with "Dark Mode" text */}
+      {/* Dark mode toggle button */}
       <button
         onClick={toggleDarkMode}
         aria-label="Toggle dark mode"
@@ -46,4 +55,4 @@ const FooterBar: React.FC<FooterBarProps> = ({ toggleDarkMode }) => {
   );
 };
 
-export default FooterBar;
+export default NavBar;
