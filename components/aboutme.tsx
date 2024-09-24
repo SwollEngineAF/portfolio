@@ -8,7 +8,6 @@ const AboutMe = () => {
     "a Certified Technologist",
     "a SCADA Engineer",
     "an IT Engineer",
-    "a Frontend Developer",
   ];
 
   const images = ["/assets/Portrait.png"];
