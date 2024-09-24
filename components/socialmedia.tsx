@@ -1,5 +1,5 @@
 "use client";
-import { FaInstagram, FaXTwitter, FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa6';
+import { FaInstagram, FaXTwitter, FaMedium, FaLinkedin, FaGithub } from 'react-icons/fa6';
 import React from "react";
 import {
   Modal,
@@ -60,12 +60,12 @@ const SocialMedia = () => {
         </a>
 
         <a 
-          href="https://www.facebook.com/hiidrasidi/" 
+          href="https://medium.com/@syahiid.rasidi" 
           className="bg-background rounded-lg p-4 flex items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm"
           target="_blank" 
           rel="noopener noreferrer"
         >
-          <FaFacebook className="h-6 w-6 text-gray-800 dark:text-gray-200" />
+          <FaMedium className="h-6 w-6 text-gray-800 dark:text-gray-200" />
           <span className="text-gray-800 dark:text-gray-200">Facebook</span>
         </a>
         </div>
