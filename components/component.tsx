@@ -2,7 +2,6 @@
 
 
 import { useState, useEffect } from "react";
-import HeroSection from "./herosection";
 import AboutMe from "./aboutme";
 import Skills from "./skills";
 import { RecentProjects } from "./recentprojects";
@@ -33,7 +32,6 @@ export default function Component() {
     <div className={`flex flex-col min-h-[100dvh] ${isDarkMode ? "bg-background-dark text-foreground-dark" : "bg-background text-foreground"}`}>
       <main className="container mx-auto px-4 md:px-6 py-12 md:py-20 flex flex-col gap-12 md:gap-16">
         <NavBar toggleDarkMode={toggleDarkMode} />
-        <HeroSection isDarkMode={isDarkMode} />
         <AboutMe />
         <Skills />
         <RecentProjects />
