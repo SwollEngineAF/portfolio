@@ -9,10 +9,9 @@ type NavBarProps = {
 
 const NavBar: React.FC<NavBarProps> = ({ toggleDarkMode }) => {
   return (
-    <div className="sticky top-0 z-50 w-full bg-muted dark:bg-white p-4 flex justify-between items-center shadow-lg">
+    <div className="sticky top-0 z-50 w-full dark:bg-white p-4 flex justify-between items-center bg-white rounded-lg p-6 md:p-8 shadow-lg">
       {/* Name with Icon */}
       <div className="flex items-center gap-2">
-        <FaUserCircle className="h-6 w-6 text-black" />
         <span className="text-lg font-bold text-black">
           Syahiid Rasidi
         </span>

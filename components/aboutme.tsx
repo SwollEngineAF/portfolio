@@ -29,7 +29,15 @@ const AboutMe = () => {
       <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between md:space-x-10 space-y-6 md:space-y-0">
         {/* Left section: Typewriter + Copywriting */}
         <div className="relative z-10 w-full md:w-1/2">
-          <h1 className="text-3xl md:text-4xl text-gray-900 dark:text-gray-100 font-bold">
+        <h1 
+            className="text-3xl md:text-4xl text-gray-900 dark:text-gray-100 font-bold pt-8"
+            style={{
+              height: '3.75em', /* For 2 lines, the height should be 2 * line-height */
+              lineHeight: '1.25em', /* Adjust line height to fit nicely within the height */
+              overflow: 'hidden', /* Hide any extra text beyond 2 lines */
+              display: 'block', /* Ensure it behaves like a block element */
+            }}
+          >
             I am {" "}
             <Typewriter
               texts={texts}
