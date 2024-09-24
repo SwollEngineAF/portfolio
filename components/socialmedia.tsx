@@ -68,26 +68,6 @@ const SocialMedia = () => {
           <FaFacebook className="h-6 w-6 text-gray-800 dark:text-gray-200" />
           <span className="text-gray-800 dark:text-gray-200">Facebook</span>
         </a>
-
-        <a 
-          href="https://www.instagram.com/hiidrasidi/" 
-          className="bg-background rounded-lg p-4 flex items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm"
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          <FaInstagram className="h-6 w-6 text-gray-800 dark:text-gray-200" />
-          <span className="text-gray-800 dark:text-gray-200">Instagram</span>
-        </a>
-
-        <a 
-          href="https://x.com/syrslah" 
-          className="bg-background rounded-lg p-4 flex items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm"
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          <FaXTwitter className="h-6 w-6 text-gray-800 dark:text-gray-200" />
-          <span className="text-gray-800 dark:text-gray-200">X</span>
-        </a>
         </div>
       </div>
     </section>
