@@ -66,7 +66,7 @@ const SocialMedia = () => {
           rel="noopener noreferrer"
         >
           <FaMedium className="h-6 w-6 text-gray-800 dark:text-gray-200" />
-          <span className="text-gray-800 dark:text-gray-200">Facebook</span>
+          <span className="text-gray-800 dark:text-gray-200">Medium</span>
         </a>
         </div>
       </div>
