@@ -5,6 +5,14 @@ import { Timeline } from "@/components/ui/timeline";
 export function RecentProjects() {
   const data = [
     {
+      title: "2025",
+      content: (
+        <div>
+          <a href="/robotic" className="text-blue-600 underline">Robotic</a>
+        </div>
+      ),
+    },
+    {
       title: "2023 - 2024",
       content: (
         <div>
