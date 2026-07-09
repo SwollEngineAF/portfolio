@@ -22,7 +22,7 @@ const Model: FC<{ url: string; position: [number, number, number]; onClick: () =
 };
 
 type HeroSectionProps = {
-  isDarkMode: boolean;
+
 };
 
 const HeroSection: FC<HeroSectionProps> = () => {
