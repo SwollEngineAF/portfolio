@@ -1,13 +1,10 @@
-import React from 'react';
-import Component from '@/components/component';
+import React from "react";
+import Component from "@/components/component";
 
 const HomePage = () => {
   return (
-    <main className="relative 
-    bg-black">
-    <div>
-      <Component/>
-    </div>
+    <main className="relative min-h-screen">
+      <Component />
     </main>
   );
 };
