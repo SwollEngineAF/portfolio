@@ -1,6 +1,5 @@
 "use client";
 
-
 import { useState, useEffect } from "react";
 import AboutMe from "./aboutme";
 import Skills from "./skills";
@@ -12,7 +11,6 @@ import HeroSection from "./herosection";
 export default function Component() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Load theme preference from localStorage
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
@@ -21,7 +19,6 @@ export default function Component() {
     }
   }, []);
 
-  // Toggle dark mode
   const toggleDarkMode = () => {
     const newMode = !isDarkMode;
     setIsDarkMode(newMode);
@@ -30,15 +27,20 @@ export default function Component() {
   };
 
   return (
-    <div className={`flex flex-col min-h-[100dvh] ${isDarkMode ? "bg-background-dark text-foreground-dark" : "bg-background text-foreground"}`}>
-      <main className="container mx-auto px-4 md:px-6 py-12 md:py-20 flex flex-col gap-12 md:gap-16">
-        <NavBar toggleDarkMode={toggleDarkMode} />
-        <HeroSection />
+    <div className="relative min-h-[100dvh] bg-background text-foreground">
+      <NavBar toggleDarkMode={toggleDarkMode} />
+      <HeroSection />
+      <div className="mx-auto flex max-w-5xl flex-col gap-24 px-6 py-20 md:gap-32 md:px-12 md:py-28 lg:px-16">
         <AboutMe />
         <Skills />
         <RecentProjects />
         <SocialMedia />
-      </main>
+      </div>
+      <footer className="mx-auto max-w-5xl border-t border-border px-6 py-10 md:px-12 lg:px-16">
+        <p className="text-sm text-muted-foreground">
+          © {new Date().getFullYear()} Syahiid Rasidi
+        </p>
+      </footer>
     </div>
   );
 }

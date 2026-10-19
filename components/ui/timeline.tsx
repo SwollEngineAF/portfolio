@@ -1,6 +1,6 @@
 "use client";
+
 import {
-  useMotionValueEvent,
   useScroll,
   useTransform,
   motion,
@@ -33,41 +33,41 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div
-      className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10 timeline-container"
-      ref={containerRef}
-    >
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-          Meaningful Career
-        </h2>
-        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          I&apos;ve been working since high school.
+    <div className="w-full font-sans" ref={containerRef}>
+      <div className="mb-4">
+        <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-ochre">
+          Career
         </p>
-        <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          Here&apos;s a timeline of my journey.
+        <h2 className="font-display text-3xl font-medium tracking-tight text-foreground md:text-4xl">
+          Meaningful work
+        </h2>
+        <p className="mt-4 max-w-md text-muted-foreground">
+          I&apos;ve been working since high school. Here&apos;s a timeline of
+          the journey.
         </p>
       </div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+      <div ref={ref} className="relative pb-8 pt-8">
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col md:flex-row justify-start pt-10 md:pt-40 md:gap-10"
+            className="flex flex-col justify-start pt-12 md:flex-row md:gap-10 md:pt-28"
           >
             <div
-              className={`z-40 items-center md:flex-row flex flex-col self-start max-w-xs lg:max-w-sm md:w-full ${index === 0 ? 'top-20' : 'top-40'} md:sticky`}
+              className={`z-30 flex max-w-xs flex-col items-center self-start md:w-full md:max-w-sm md:flex-row ${
+                index === 0 ? "top-20" : "top-28"
+              } md:sticky`}
             >
-              <div className="h-10 absolute left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
-                <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
+              <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-background">
+                <div className="h-2 w-2 rounded-full bg-ochre" />
               </div>
-              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500">
+              <h3 className="hidden font-display text-xl font-medium text-muted-foreground md:block md:pl-16 md:text-4xl">
                 {item.title}
               </h3>
             </div>
 
-            <div className="relative pl-20 pr-4 md:pl-4 w-full timeline-content">
-              <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
+            <div className="relative w-full pl-16 pr-0 md:pl-4">
+              <h3 className="mb-4 block text-left font-display text-2xl font-medium text-muted-foreground md:hidden">
                 {item.title}
               </h3>
               {item.content}
@@ -75,17 +75,15 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           </div>
         ))}
         <div
-          style={{
-            height: height + "px",
-          }}
-          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
+          style={{ height: height + "px" }}
+          className="absolute left-8 top-0 w-px overflow-hidden bg-border [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] md:left-8"
         >
           <motion.div
             style={{
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full"
+            className="absolute inset-x-0 top-0 w-px rounded-full bg-gradient-to-t from-ochre via-ochre/60 to-transparent"
           />
         </div>
       </div>

@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+"use client";
+
+import { useState } from "react";
 import Typewriter from "./typewriter";
 import Image from "next/image";
 
@@ -11,60 +13,66 @@ const AboutMe = () => {
   ];
 
   const images = ["/assets/Portrait.png"];
-
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [fadeIn, setFadeIn] = useState(true);
 
   const handleLoopChange = (loopNum: number) => {
-    setFadeIn(false); // Start fade out
+    setFadeIn(false);
     setTimeout(() => {
-      setCurrentImageIndex(loopNum % images.length); // Update image
-      setFadeIn(true); // Start fade in
-    }, 500); // Image change delay to allow fade out
+      setCurrentImageIndex(loopNum % images.length);
+      setFadeIn(true);
+    }, 500);
   };
 
   return (
-    <section id="about-me" className="bg-transparent rounded-lg p-6 md:p-8 shadow-lg">
-      <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between md:space-x-10 space-y-6 md:space-y-0">
-        {/* Left section: Typewriter + Copywriting */}
-        <div className="relative z-10 w-full md:w-1/2">
-        <h1 
-            className="text-3xl md:text-4xl text-gray-900 dark:text-gray-100 font-bold pt-8"
+    <section id="about-me" className="scroll-mt-24">
+      <div className="flex flex-col gap-12 md:flex-row md:items-start md:gap-16">
+        <div className="w-full md:w-1/2">
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-ochre">
+            About
+          </p>
+          <h2
+            className="font-display text-3xl font-medium leading-tight tracking-tight text-foreground md:text-4xl"
             style={{
-              height: '3.75em', /* For 2 lines, the height should be 2 * line-height */
-              lineHeight: '1.25em', /* Adjust line height to fit nicely within the height */
-              overflow: 'hidden', /* Hide any extra text beyond 2 lines */
-              display: 'block', /* Ensure it behaves like a block element */
+              minHeight: "2.6em",
+              lineHeight: "1.3em",
             }}
           >
-            I am {" "}
+            I am{" "}
             <Typewriter
               texts={texts}
               period={2000}
               setLoopNum={handleLoopChange}
-              className="text-3xl md:text-4xl"
+              className="text-ochre"
             />
-          </h1>
-          {/* Copywriting section */}
-          <div className="mt-6 text-gray-700 dark:text-gray-300">
-            <p className="text-lg md:text-xl leading-relaxed">
-              With a strong background in engineering and technology, I am passionate about solving real-world challenges through innovative solutions. My expertise spans multiple domains, from industrial automation and SCADA systems to cutting-edge frontend development.
+          </h2>
+          <div className="mt-8 space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p>
+              With a strong background in engineering and technology, I am
+              passionate about solving real-world challenges through innovative
+              solutions. My expertise spans industrial automation and SCADA
+              systems to thoughtful product and frontend work.
             </p>
-            <p className="text-lg md:text-xl leading-relaxed mt-4">
-              I believe in lifelong learning, continuous improvement, and staying ahead of the technological curve.
+            <p>
+              I believe in lifelong learning, continuous improvement, and
+              staying ahead of the technological curve.
             </p>
           </div>
         </div>
 
-        {/* Right section: Image always fills div */}
-        <div className="relative w-full md:w-1/2 flex justify-center">
-          <div className="relative w-full h-[400px] md:h-[500px]">  {/* Adjust height for responsiveness */}
+        <div className="relative w-full md:w-1/2">
+          <div
+            className={`relative aspect-[4/5] w-full overflow-hidden transition-opacity duration-500 ${
+              fadeIn ? "opacity-100" : "opacity-40"
+            }`}
+          >
             <Image
-              src={images[currentImageIndex]} // Display the current image
-              alt={texts[currentImageIndex]}
-              layout="fill" // Ensures the image fills the container
-              objectFit="cover" // Ensures the image fills the div and keeps aspect ratio
-              className="rounded-lg shadow-md"
+              src={images[currentImageIndex]}
+              alt={texts[currentImageIndex] ?? "Portrait"}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+              priority
             />
           </div>
         </div>

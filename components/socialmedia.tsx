@@ -1,11 +1,11 @@
 "use client";
-import { FaInstagram, FaXTwitter, FaMedium, FaLinkedin, FaGithub } from 'react-icons/fa6';
+
+import { FaMedium, FaLinkedin, FaGithub } from "react-icons/fa6";
 import React from "react";
 import {
   Modal,
   ModalBody,
   ModalContent,
-  ModalFooter,
   ModalTrigger,
 } from "./ui/animated-modal";
 import { FocusCards } from "./ui/focus-cards";
@@ -16,59 +16,64 @@ const SocialMedia = () => {
       title: "University GitHub",
       description: "Visit abin733 GitHub",
       href: "https://github.com/abin733",
-      src: "/assets/githubabin733.webp", // Path to local image for university GitHub
-      className: "bg-blue-500 text-white",
+      src: "/assets/githubabin733.webp",
+      className: "bg-foreground text-background",
     },
     {
       title: "Personal GitHub",
       description: "Visit SwollEngineAF GitHub",
       href: "https://github.com/SwollEngineAF",
-      src: "/assets/githubswollengineaf.webp", // Path to local image for personal GitHub
-      className: "bg-amber-500 text-white",
+      src: "/assets/githubswollengineaf.webp",
+      className: "bg-ochre text-background",
     },
   ];
 
+  const linkClass =
+    "inline-flex items-center gap-2 border-b border-transparent pb-0.5 text-sm text-muted-foreground transition-colors hover:border-ochre hover:text-ochre";
+
   return (
-    <section className="bg-transparent rounded-lg p-6 md:p-8 shadow-lg">
-      <div className="space-y-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Links</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {/* GitHub with modal */}
-          <Modal>
-            <ModalTrigger className="bg-background rounded-lg p-4 flex items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm cursor-pointer">
-              <FaGithub className="h-6 w-6 text-gray-800 dark:text-gray-200" />
-              <span className="text-gray-800 dark:text-gray-200">GitHub</span>
-            </ModalTrigger>
-            <ModalBody>
-              <ModalContent>
-                <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
-                  Select a GitHub Profile
-                </h4>
-                {/* GitHub profiles using FocusCards */}
-                <FocusCards cards={cards} />
-              </ModalContent>
-            </ModalBody>
-          </Modal>
-        <a 
-          href="https://www.linkedin.com/in/syahiidrasidi/" 
-          className="bg-background rounded-lg p-4 flex items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm"
-          target="_blank" 
+    <section id="links" className="scroll-mt-24">
+      <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-ochre">
+        Elsewhere
+      </p>
+      <h2 className="font-display text-3xl font-medium tracking-tight text-foreground md:text-4xl">
+        Links
+      </h2>
+      <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-border pt-8">
+        <Modal>
+          <ModalTrigger className={`${linkClass} cursor-pointer bg-transparent p-0`}>
+            <FaGithub className="h-4 w-4" />
+            <span>GitHub</span>
+          </ModalTrigger>
+          <ModalBody>
+            <ModalContent>
+              <h4 className="mb-8 text-center font-display text-lg font-medium text-foreground md:text-2xl">
+                Select a GitHub profile
+              </h4>
+              <FocusCards cards={cards} />
+            </ModalContent>
+          </ModalBody>
+        </Modal>
+
+        <a
+          href="https://www.linkedin.com/in/syahiidrasidi/"
+          className={linkClass}
+          target="_blank"
           rel="noopener noreferrer"
         >
-          <FaLinkedin className="h-6 w-6 text-gray-800 dark:text-gray-200" />
-          <span className="text-gray-800 dark:text-gray-200">LinkedIn</span>
+          <FaLinkedin className="h-4 w-4" />
+          <span>LinkedIn</span>
         </a>
 
-        <a 
-          href="https://medium.com/@syahiid.rasidi" 
-          className="bg-background rounded-lg p-4 flex items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground transition-colors shadow-sm"
-          target="_blank" 
+        <a
+          href="https://medium.com/@syahiid.rasidi"
+          className={linkClass}
+          target="_blank"
           rel="noopener noreferrer"
         >
-          <FaMedium className="h-6 w-6 text-gray-800 dark:text-gray-200" />
-          <span className="text-gray-800 dark:text-gray-200">Medium</span>
+          <FaMedium className="h-4 w-4" />
+          <span>Medium</span>
         </a>
-        </div>
       </div>
     </section>
   );
