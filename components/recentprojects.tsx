@@ -8,9 +8,54 @@ const projectImageClass =
 export function RecentProjects() {
   const data = [
     {
-      title: "2023 - 2024",
+      title: "2025 - Present",
+      content: (
+        <div>
+          <p className="mb-4 text-sm text-muted-foreground md:text-base">
+            IT Solutions Engineer at Daifuku Oceania, supporting international
+            Self-Bag Drop (SBD) deployments, backend high availability, and
+            endpoint security across enterprise airport environments.
+          </p>
+          <p className="mb-6 text-sm text-muted-foreground md:text-base">
+            Supported DSST unit deployment at sites worldwide and SBD PC rollout.
+            Deployed a high-availability backend for Hong Kong International
+            Airport T2 SBDs (Collins Aerospace) using Microsoft Service Fabric,
+            SQL databases, and Loadbalancer.org ADCs, with stress testing for
+            traffic separation and scalability. Hardened endpoints with strict
+            peripheral access control across multiple HID types to reduce physical
+            attack surface while keeping operations running.
+          </p>
+          <div className="grid grid-cols-2 gap-3">
+            <Image
+              src="/assets/vietnam-airports-sbds.png"
+              alt="Self-Bag Drop deployment at international airports"
+              width={500}
+              height={500}
+              className={projectImageClass}
+            />
+            <Image
+              src="/assets/klia2-airport.png"
+              alt="Airport baggage and passenger systems"
+              width={500}
+              height={500}
+              className={projectImageClass}
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2023 - 2025",
       content: (
         <div className="space-y-10">
+          <div>
+            <h3 className="font-display text-xl font-medium text-foreground">
+              Master of Information Technology
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground md:text-base">
+              University of Auckland, New Zealand (February 2023 – May 2025).
+            </p>
+          </div>
           <div>
             <h3 className="font-display text-xl font-medium text-foreground">
               Prism ImaGen
@@ -49,12 +94,12 @@ export function RecentProjects() {
           </div>
           <div>
             <h3 className="font-display text-xl font-medium text-foreground">
-              IT Solutions Contractor
+              IT Postgraduate Internship — Daifuku Oceania
             </h3>
             <p className="mt-2 text-sm text-muted-foreground md:text-base">
-              Managed setup and testing of the Self-Service Bag Drop-UX system,
-              including deployment of over 100 AI Edge devices powered by Nvidia
-              Jetson Orin NX during summer break 2023.
+              November 2023 – February 2024. Managed deployment and testing of
+              over 100 AI-powered edge devices for a Self-Service Bag Drop system
+              using Nvidia Jetson Orin NX, delivered on scope and on time.
             </p>
             <div className="mt-4 grid grid-cols-2 gap-3">
               <Image
