@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Typewriter from "./typewriter";
-import Image from "next/image";
+import PolygonPortrait from "./polygon-portrait";
 
 const AboutMe = () => {
   const texts = [
@@ -12,14 +12,11 @@ const AboutMe = () => {
     "an IT Engineer",
   ];
 
-  const images = ["/assets/Portrait.png"];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [fadeIn, setFadeIn] = useState(true);
 
-  const handleLoopChange = (loopNum: number) => {
+  const handleLoopChange = (_loopNum: number) => {
     setFadeIn(false);
     setTimeout(() => {
-      setCurrentImageIndex(loopNum % images.length);
       setFadeIn(true);
     }, 500);
   };
@@ -66,14 +63,7 @@ const AboutMe = () => {
               fadeIn ? "opacity-100" : "opacity-40"
             }`}
           >
-            <Image
-              src={images[currentImageIndex]}
-              alt={texts[currentImageIndex] ?? "Portrait"}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-              priority
-            />
+            <PolygonPortrait className="absolute inset-0 h-full w-full" />
           </div>
         </div>
       </div>

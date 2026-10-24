@@ -1,0 +1,302 @@
+"use client";
+
+import { cn } from "@/lib/utils";
+
+type PolygonPortraitProps = {
+  className?: string;
+  title?: string;
+};
+
+/**
+ * Low-poly portrait derived from the site portrait photo.
+ * Shade classes map to CSS variables that flip with .dark.
+ */
+export default function PolygonPortrait({
+  className,
+  title = "Syahiid Rasidi",
+}: PolygonPortraitProps) {
+  return (
+    <svg
+      viewBox="0 0 400 500"
+      role="img"
+      aria-label={title}
+      className={cn("polygon-portrait h-full w-full", className)}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title>{title}</title>
+      <rect width="400" height="500" className="pp-bg" />
+        <polygon points="197.2 196.6 150.5 210.2 174.1 216.7" className="pp-s0" />
+        <polygon points="45.7 201.1 59.9 244.0 94.5 240.5" className="pp-s0" />
+        <polygon points="264.5 401.4 292.1 346.9 256.1 341.4" className="pp-s0" />
+        <polygon points="45.7 201.1 94.5 240.5 109.7 200.2" className="pp-s0" />
+        <polygon points="54.7 143.9 109.7 200.2 109.6 140.6" className="pp-s0" />
+        <polygon points="152.8 54.8 93.2 104.1 129.1 102.3" className="pp-s0" />
+        <polygon points="129.1 102.3 93.2 104.1 109.6 140.6" className="pp-s0" />
+        <polygon points="90.2 292.8 91.2 351.5 158.2 307.1" className="pp-s0" />
+        <polygon points="91.2 351.5 147.8 393.9 158.2 307.1" className="pp-s0" />
+        <polygon points="93.2 104.1 54.7 143.9 109.6 140.6" className="pp-s0" />
+        <polygon points="91.2 351.5 93.0 393.6 147.8 393.9" className="pp-s0" />
+        <polygon points="242.0 437.5 206.1 409.6 232.1 447.7" className="pp-s0" />
+        <polygon points="232.1 447.7 206.1 409.6 225.2 456.1" className="pp-s0" />
+        <polygon points="182.0 448.4 206.1 409.6 147.8 393.9" className="pp-s0" />
+        <polygon points="199.5 36.9 160.0 0.0 152.8 54.8" className="pp-s0" />
+        <polygon points="198.5 460.5 225.2 456.1 206.1 409.6" className="pp-s0" />
+        <polygon points="182.0 448.4 198.5 460.5 206.1 409.6" className="pp-s0" />
+        <polygon points="57.8 457.5 141.9 454.5 93.0 393.6" className="pp-s0" />
+        <polygon points="269.5 457.0 309.9 457.6 302.7 406.0" className="pp-s0" />
+        <polygon points="280.0 500.0 309.9 457.6 269.5 457.0" className="pp-s0" />
+        <polygon points="108.4 500.0 141.8 465.2 141.9 454.5" className="pp-s0" />
+        <polygon points="144.7 479.2 120.0 500.0 144.1 495.9" className="pp-s0" />
+        <polygon points="240.3 485.1 238.4 481.9 222.9 481.9" className="pp-s0" />
+        <polygon points="222.9 481.9 238.4 481.9 231.7 477.8" className="pp-s0" />
+        <polygon points="243.3 489.9 240.3 485.1 240.0 500.0" className="pp-s0" />
+        <polygon points="222.9 481.9 218.2 483.3 240.0 500.0" className="pp-s0" />
+        <polygon points="240.3 485.1 222.9 481.9 240.0 500.0" className="pp-s0" />
+        <polygon points="309.9 457.6 320.0 500.0 344.7 444.2" className="pp-s0" />
+        <polygon points="193.9 485.1 200.0 500.0 197.8 481.8" className="pp-s0" />
+        <polygon points="246.8 492.0 243.3 489.9 240.0 500.0" className="pp-s0" />
+        <polygon points="243.3 489.9 246.8 492.0 240.3 485.1" className="pp-s0" />
+        <polygon points="189.9 489.6 200.0 500.0 193.9 485.1" className="pp-s0" />
+        <polygon points="240.0 500.0 250.5 492.8 246.8 492.0" className="pp-s0" />
+        <polygon points="187.1 493.1 200.0 500.0 189.9 489.6" className="pp-s0" />
+        <polygon points="186.2 497.3 200.0 500.0 187.1 493.1" className="pp-s0" />
+        <polygon points="144.7 479.2 141.8 465.2 120.0 500.0" className="pp-s0" />
+        <polygon points="120.0 500.0 149.7 500.0 144.1 495.9" className="pp-s0" />
+        <polygon points="108.4 500.0 120.0 500.0 141.8 465.2" className="pp-s0" />
+        <polygon points="280.0 500.0 320.0 500.0 309.9 457.6" className="pp-s0" />
+        <polygon points="57.8 457.5 108.4 500.0 141.9 454.5" className="pp-s0" />
+        <polygon points="57.8 457.5 80.0 500.0 108.4 500.0" className="pp-s0" />
+        <polygon points="40.9 490.7 80.0 500.0 57.8 457.5" className="pp-s0" />
+        <polygon points="320.0 500.0 360.0 500.0 344.7 444.2" className="pp-s0" />
+        <polygon points="360.0 500.0 390.3 500.0 400.0 450.0" className="pp-s0" />
+        <polygon points="0.0 500.0 40.0 500.0 40.9 490.7" className="pp-s0" />
+        <polygon points="40.9 490.7 40.0 500.0 80.0 500.0" className="pp-s0" />
+        <polygon points="390.3 500.0 400.0 500.0 400.0 450.0" className="pp-s0" />
+        <polygon points="256.1 213.0 257.2 200.5 197.2 196.6" className="pp-s1" />
+        <polygon points="353.2 151.8 295.2 146.2 296.9 207.4" className="pp-s1" />
+        <polygon points="109.7 200.2 94.5 240.5 150.5 210.2" className="pp-s1" />
+        <polygon points="256.1 341.4 292.1 346.9 293.9 304.9" className="pp-s1" />
+        <polygon points="303.4 255.2 358.3 249.3 296.9 207.4" className="pp-s1" />
+        <polygon points="152.8 54.8 129.1 102.3 158.6 103.0" className="pp-s1" />
+        <polygon points="353.2 151.8 293.4 92.9 295.2 146.2" className="pp-s1" />
+        <polygon points="94.5 240.5 59.9 244.0 90.2 292.8" className="pp-s1" />
+        <polygon points="54.7 143.9 45.7 201.1 109.7 200.2" className="pp-s1" />
+        <polygon points="52.3 295.8 91.2 351.5 90.2 292.8" className="pp-s1" />
+        <polygon points="52.3 295.8 90.2 292.8 59.9 244.0" className="pp-s1" />
+        <polygon points="147.8 393.9 206.1 409.6 196.2 350.0" className="pp-s1" />
+        <polygon points="293.4 92.9 257.2 49.0 255.4 104.7" className="pp-s1" />
+        <polygon points="400.0 250.0 400.0 248.4 358.3 249.3" className="pp-s1" />
+        <polygon points="400.0 250.0 358.3 249.3 400.0 300.0" className="pp-s1" />
+        <polygon points="400.0 300.0 358.3 249.3 352.4 299.2" className="pp-s1" />
+        <polygon points="400.0 248.4 400.0 200.0 358.3 249.3" className="pp-s1" />
+        <polygon points="206.5 51.3 199.5 36.9 152.8 54.8" className="pp-s1" />
+        <polygon points="240.0 0.0 199.5 36.9 206.5 51.3" className="pp-s1" />
+        <polygon points="264.5 401.4 302.7 406.0 292.1 346.9" className="pp-s1" />
+        <polygon points="400.0 350.0 352.4 299.2 344.9 343.8" className="pp-s1" />
+        <polygon points="400.0 350.0 400.0 300.0 352.4 299.2" className="pp-s1" />
+        <polygon points="400.0 200.0 400.0 150.0 353.2 151.8" className="pp-s1" />
+        <polygon points="206.1 409.6 249.1 423.7 259.3 403.2" className="pp-s1" />
+        <polygon points="54.9 358.5 93.0 393.6 91.2 351.5" className="pp-s1" />
+        <polygon points="242.0 437.5 249.1 423.7 206.1 409.6" className="pp-s1" />
+        <polygon points="302.7 406.0 344.7 444.2 342.6 391.2" className="pp-s1" />
+        <polygon points="3.7 354.2 54.9 358.5 52.3 295.8" className="pp-s1" />
+        <polygon points="400.0 150.0 396.3 110.2 353.2 151.8" className="pp-s1" />
+        <polygon points="0.0 200.0 0.0 250.0 45.7 201.1" className="pp-s1" />
+        <polygon points="0.0 198.1 45.7 201.1 0.0 150.0" className="pp-s1" />
+        <polygon points="0.0 198.1 0.0 200.0 45.7 201.1" className="pp-s1" />
+        <polygon points="0.0 150.0 45.7 201.1 54.7 143.9" className="pp-s1" />
+        <polygon points="0.0 250.0 0.0 258.2 59.9 244.0" className="pp-s1" />
+        <polygon points="0.0 258.2 6.4 290.5 52.3 295.8" className="pp-s1" />
+        <polygon points="342.6 391.2 400.0 350.0 344.9 343.8" className="pp-s1" />
+        <polygon points="400.0 150.0 400.0 100.0 396.3 110.2" className="pp-s1" />
+        <polygon points="396.3 110.2 400.0 100.0 306.6 60.1" className="pp-s1" />
+        <polygon points="240.0 0.0 206.5 51.3 257.2 49.0" className="pp-s1" />
+        <polygon points="152.8 54.8 96.8 2.1 93.2 104.1" className="pp-s1" />
+        <polygon points="200.0 0.0 190.1 0.4 199.5 36.9" className="pp-s1" />
+        <polygon points="0.2 148.3 0.0 150.0 54.7 143.9" className="pp-s1" />
+        <polygon points="0.0 258.2 0.0 300.0 6.4 290.5" className="pp-s1" />
+        <polygon points="6.4 290.5 0.0 300.0 52.3 295.8" className="pp-s1" />
+        <polygon points="0.2 148.3 54.7 143.9 0.0 100.0" className="pp-s1" />
+        <polygon points="54.9 358.5 55.4 393.9 93.0 393.6" className="pp-s1" />
+        <polygon points="93.0 393.6 141.9 454.5 147.8 393.9" className="pp-s1" />
+        <polygon points="3.7 354.2 55.4 393.9 54.9 358.5" className="pp-s1" />
+        <polygon points="218.8 465.1 223.7 460.5 225.2 456.1" className="pp-s1" />
+        <polygon points="190.1 0.4 160.0 0.0 199.5 36.9" className="pp-s1" />
+        <polygon points="342.6 391.2 400.0 393.5 400.0 350.0" className="pp-s1" />
+        <polygon points="160.0 0.0 147.4 0.0 152.8 54.8" className="pp-s1" />
+        <polygon points="206.8 466.6 218.8 465.1 225.2 456.1" className="pp-s1" />
+        <polygon points="198.5 460.5 206.8 466.6 225.2 456.1" className="pp-s1" />
+        <polygon points="147.4 0.0 120.0 0.0 152.8 54.8" className="pp-s1" />
+        <polygon points="400.0 400.0 400.0 393.5 342.6 391.2" className="pp-s1" />
+        <polygon points="0.0 350.0 3.7 354.2 52.3 295.8" className="pp-s1" />
+        <polygon points="54.1 0.0 9.4 90.5 93.2 104.1" className="pp-s1" />
+        <polygon points="0.0 300.0 0.0 350.0 52.3 295.8" className="pp-s1" />
+        <polygon points="344.5 0.0 320.0 0.0 306.6 60.1" className="pp-s1" />
+        <polygon points="9.4 90.5 0.0 100.0 54.7 143.9" className="pp-s1" />
+        <polygon points="0.2 148.3 0.0 100.0 0.0 150.0" className="pp-s1" />
+        <polygon points="309.9 457.6 344.7 444.2 302.7 406.0" className="pp-s1" />
+        <polygon points="344.7 444.2 400.0 400.0 342.6 391.2" className="pp-s1" />
+        <polygon points="120.0 0.0 96.8 2.1 152.8 54.8" className="pp-s1" />
+        <polygon points="9.4 90.5 0.0 50.0 0.0 100.0" className="pp-s1" />
+        <polygon points="400.0 100.0 400.0 50.0 306.6 60.1" className="pp-s1" />
+        <polygon points="197.8 481.8 200.0 500.0 211.5 483.9" className="pp-s1" />
+        <polygon points="360.0 0.0 344.5 0.0 306.6 60.1" className="pp-s1" />
+        <polygon points="120.0 0.0 80.0 0.0 96.8 2.1" className="pp-s1" />
+        <polygon points="200.0 500.0 218.2 483.3 211.5 483.9" className="pp-s1" />
+        <polygon points="246.8 492.0 250.5 492.8 240.3 485.1" className="pp-s1" />
+        <polygon points="400.0 50.0 360.0 0.0 306.6 60.1" className="pp-s1" />
+        <polygon points="200.0 500.0 240.0 500.0 218.2 483.3" className="pp-s1" />
+        <polygon points="0.0 350.0 0.0 400.0 3.7 354.2" className="pp-s1" />
+        <polygon points="3.7 354.2 0.0 400.0 55.4 393.9" className="pp-s1" />
+        <polygon points="57.8 457.5 93.0 393.6 55.4 393.9" className="pp-s1" />
+        <polygon points="0.0 448.9 57.8 457.5 55.4 393.9" className="pp-s1" />
+        <polygon points="54.1 0.0 0.0 50.0 9.4 90.5" className="pp-s1" />
+        <polygon points="344.7 444.2 400.0 450.0 400.0 400.0" className="pp-s1" />
+        <polygon points="400.0 50.0 394.9 2.8 360.0 0.0" className="pp-s1" />
+        <polygon points="54.1 0.0 40.0 0.0 0.0 50.0" className="pp-s1" />
+        <polygon points="360.0 500.0 400.0 450.0 344.7 444.2" className="pp-s1" />
+        <polygon points="400.0 50.0 400.0 0.0 394.9 2.8" className="pp-s1" />
+        <polygon points="394.9 2.8 400.0 0.0 360.0 0.0" className="pp-s1" />
+        <polygon points="0.0 400.0 0.0 448.9 55.4 393.9" className="pp-s1" />
+        <polygon points="0.0 448.9 0.0 450.0 57.8 457.5" className="pp-s1" />
+        <polygon points="40.0 0.0 0.0 2.7 0.0 50.0" className="pp-s1" />
+        <polygon points="40.0 0.0 0.0 0.0 0.0 2.7" className="pp-s1" />
+        <polygon points="0.0 450.0 40.9 490.7 57.8 457.5" className="pp-s1" />
+        <polygon points="0.0 450.0 0.0 500.0 40.9 490.7" className="pp-s1" />
+        <polygon points="197.2 196.6 174.1 216.7 192.6 213.8" className="pp-s2" />
+        <polygon points="197.2 196.6 156.0 146.2 150.5 210.2" className="pp-s2" />
+        <polygon points="192.6 297.5 246.2 304.5 205.5 252.4" className="pp-s2" />
+        <polygon points="246.2 304.5 293.9 304.9 303.4 255.2" className="pp-s2" />
+        <polygon points="296.9 207.4 295.2 146.2 257.2 200.5" className="pp-s2" />
+        <polygon points="212.8 335.8 256.1 341.4 246.2 304.5" className="pp-s2" />
+        <polygon points="352.4 299.2 358.3 249.3 303.4 255.2" className="pp-s2" />
+        <polygon points="352.4 299.2 303.4 255.2 293.9 304.9" className="pp-s2" />
+        <polygon points="344.9 343.8 352.4 299.2 293.9 304.9" className="pp-s2" />
+        <polygon points="295.2 146.2 293.4 92.9 255.4 104.7" className="pp-s2" />
+        <polygon points="358.3 249.3 353.2 151.8 296.9 207.4" className="pp-s2" />
+        <polygon points="292.1 346.9 344.9 343.8 293.9 304.9" className="pp-s2" />
+        <polygon points="257.2 49.0 206.5 51.3 255.4 104.7" className="pp-s2" />
+        <polygon points="0.0 258.2 52.3 295.8 59.9 244.0" className="pp-s2" />
+        <polygon points="259.3 403.2 264.5 401.4 256.1 341.4" className="pp-s2" />
+        <polygon points="292.1 346.9 342.6 391.2 344.9 343.8" className="pp-s2" />
+        <polygon points="259.3 403.2 256.1 341.4 196.2 350.0" className="pp-s2" />
+        <polygon points="206.1 409.6 259.3 403.2 196.2 350.0" className="pp-s2" />
+        <polygon points="306.6 60.1 257.2 49.0 293.4 92.9" className="pp-s2" />
+        <polygon points="206.5 51.3 152.8 54.8 158.6 103.0" className="pp-s2" />
+        <polygon points="358.3 249.3 400.0 200.0 353.2 151.8" className="pp-s2" />
+        <polygon points="396.3 110.2 306.6 60.1 293.4 92.9" className="pp-s2" />
+        <polygon points="396.3 110.2 293.4 92.9 353.2 151.8" className="pp-s2" />
+        <polygon points="255.3 420.3 302.7 406.0 264.5 401.4" className="pp-s2" />
+        <polygon points="255.3 420.3 269.5 457.0 302.7 406.0" className="pp-s2" />
+        <polygon points="302.7 406.0 342.6 391.2 292.1 346.9" className="pp-s2" />
+        <polygon points="242.0 437.5 232.1 447.7 236.1 445.1" className="pp-s2" />
+        <polygon points="52.3 295.8 54.9 358.5 91.2 351.5" className="pp-s2" />
+        <polygon points="45.7 201.1 0.0 250.0 59.9 244.0" className="pp-s2" />
+        <polygon points="240.0 0.0 200.0 0.0 199.5 36.9" className="pp-s2" />
+        <polygon points="240.0 0.0 257.2 49.0 280.0 0.0" className="pp-s2" />
+        <polygon points="280.0 0.0 257.2 49.0 306.6 60.1" className="pp-s2" />
+        <polygon points="9.4 90.5 54.7 143.9 93.2 104.1" className="pp-s2" />
+        <polygon points="200.0 0.0 160.0 0.0 190.1 0.4" className="pp-s2" />
+        <polygon points="218.8 465.1 222.9 462.9 223.7 460.5" className="pp-s2" />
+        <polygon points="320.0 0.0 280.0 0.0 306.6 60.1" className="pp-s2" />
+        <polygon points="223.1 478.4 229.1 474.2 224.2 474.4" className="pp-s2" />
+        <polygon points="223.1 478.4 222.9 481.9 231.7 477.8" className="pp-s2" />
+        <polygon points="197.8 481.8 211.5 483.9 210.8 483.1" className="pp-s2" />
+        <polygon points="148.0 490.1 144.1 495.9 146.1 495.2" className="pp-s2" />
+        <polygon points="96.8 2.1 80.0 0.0 93.2 104.1" className="pp-s2" />
+        <polygon points="80.0 0.0 54.1 0.0 93.2 104.1" className="pp-s2" />
+        <polygon points="144.1 495.9 149.7 500.0 146.1 495.2" className="pp-s2" />
+        <polygon points="303.4 255.2 296.9 207.4 256.1 213.0" className="pp-s3" />
+        <polygon points="256.1 213.0 296.9 207.4 257.2 200.5" className="pp-s3" />
+        <polygon points="196.2 350.0 212.8 335.8 192.6 297.5" className="pp-s3" />
+        <polygon points="256.1 341.4 293.9 304.9 246.2 304.5" className="pp-s3" />
+        <polygon points="156.0 146.2 109.7 200.2 150.5 210.2" className="pp-s3" />
+        <polygon points="152.3 252.0 90.2 292.8 158.2 307.1" className="pp-s3" />
+        <polygon points="147.8 393.9 196.2 350.0 158.2 307.1" className="pp-s3" />
+        <polygon points="94.5 240.5 90.2 292.8 152.3 252.0" className="pp-s3" />
+        <polygon points="246.3 432.6 249.1 423.7 242.0 437.5" className="pp-s3" />
+        <polygon points="231.7 477.8 229.1 474.2 223.1 478.4" className="pp-s3" />
+        <polygon points="211.5 483.9 218.2 483.3 213.5 481.3" className="pp-s3" />
+        <polygon points="210.8 483.1 211.5 483.9 213.5 481.3" className="pp-s3" />
+        <polygon points="150.5 210.2 152.3 252.0 174.1 216.7" className="pp-s4" />
+        <polygon points="257.2 200.5 253.5 150.5 197.2 196.6" className="pp-s4" />
+        <polygon points="303.4 255.2 256.1 213.0 241.1 239.6" className="pp-s4" />
+        <polygon points="295.2 146.2 253.5 150.5 257.2 200.5" className="pp-s4" />
+        <polygon points="192.6 297.5 212.8 335.8 246.2 304.5" className="pp-s4" />
+        <polygon points="158.2 307.1 196.2 350.0 192.6 297.5" className="pp-s4" />
+        <polygon points="212.8 335.8 196.2 350.0 256.1 341.4" className="pp-s4" />
+        <polygon points="156.0 146.2 109.6 140.6 109.7 200.2" className="pp-s4" />
+        <polygon points="129.1 102.3 109.6 140.6 156.0 146.2" className="pp-s4" />
+        <polygon points="249.1 423.7 255.3 420.3 259.3 403.2" className="pp-s4" />
+        <polygon points="249.1 423.7 246.3 432.6 255.3 420.3" className="pp-s4" />
+        <polygon points="197.8 481.8 210.8 483.1 202.0 477.4" className="pp-s4" />
+        <polygon points="148.0 490.1 144.7 479.2 144.1 495.9" className="pp-s4" />
+        <polygon points="241.1 239.6 197.2 196.6 192.6 213.8" className="pp-s5" />
+        <polygon points="241.1 239.6 256.1 213.0 197.2 196.6" className="pp-s5" />
+        <polygon points="192.6 213.8 174.1 216.7 205.5 252.4" className="pp-s5" />
+        <polygon points="174.1 216.7 152.3 252.0 205.5 252.4" className="pp-s5" />
+        <polygon points="205.5 252.4 246.2 304.5 241.1 239.6" className="pp-s5" />
+        <polygon points="150.5 210.2 94.5 240.5 152.3 252.0" className="pp-s5" />
+        <polygon points="295.2 146.2 255.4 104.7 253.5 150.5" className="pp-s5" />
+        <polygon points="158.6 103.0 129.1 102.3 156.0 146.2" className="pp-s5" />
+        <polygon points="224.2 474.4 218.8 465.1 213.5 481.3" className="pp-s5" />
+        <polygon points="213.5 481.3 218.8 465.1 206.8 466.6" className="pp-s5" />
+        <polygon points="213.5 481.3 206.8 466.6 202.0 477.4" className="pp-s5" />
+        <polygon points="218.2 483.3 222.9 481.9 223.1 478.4" className="pp-s5" />
+        <polygon points="240.0 500.0 280.0 500.0 250.5 492.8" className="pp-s5" />
+        <polygon points="205.5 252.4 241.1 239.6 192.6 213.8" className="pp-s6" />
+        <polygon points="152.3 252.0 192.6 297.5 205.5 252.4" className="pp-s6" />
+        <polygon points="246.2 304.5 303.4 255.2 241.1 239.6" className="pp-s6" />
+        <polygon points="152.3 252.0 158.2 307.1 192.6 297.5" className="pp-s6" />
+        <polygon points="198.5 147.4 156.0 146.2 197.2 196.6" className="pp-s6" />
+        <polygon points="198.5 147.4 158.6 103.0 156.0 146.2" className="pp-s6" />
+        <polygon points="255.4 104.7 206.5 103.6 253.5 150.5" className="pp-s6" />
+        <polygon points="255.4 104.7 206.5 51.3 206.5 103.6" className="pp-s6" />
+        <polygon points="206.5 103.6 206.5 51.3 158.6 103.0" className="pp-s6" />
+        <polygon points="259.3 403.2 255.3 420.3 264.5 401.4" className="pp-s6" />
+        <polygon points="141.9 454.5 182.0 448.4 147.8 393.9" className="pp-s6" />
+        <polygon points="224.2 474.4 213.5 481.3 223.1 478.4" className="pp-s6" />
+        <polygon points="224.2 474.4 222.9 462.9 218.8 465.1" className="pp-s6" />
+        <polygon points="210.8 483.1 213.5 481.3 202.0 477.4" className="pp-s6" />
+        <polygon points="213.5 481.3 218.2 483.3 223.1 478.4" className="pp-s6" />
+        <polygon points="238.4 481.9 240.3 485.1 237.1 477.1" className="pp-s6" />
+        <polygon points="240.3 485.1 250.5 492.8 237.1 477.1" className="pp-s6" />
+        <polygon points="160.0 500.0 200.0 500.0 186.2 497.3" className="pp-s6" />
+        <polygon points="250.5 492.8 280.0 500.0 269.5 457.0" className="pp-s6" />
+        <polygon points="253.5 150.5 198.5 147.4 197.2 196.6" className="pp-s7" />
+        <polygon points="253.5 150.5 206.5 103.6 198.5 147.4" className="pp-s7" />
+        <polygon points="206.5 103.6 158.6 103.0 198.5 147.4" className="pp-s7" />
+        <polygon points="246.3 432.6 253.8 442.3 255.3 420.3" className="pp-s7" />
+        <polygon points="236.1 445.1 253.8 442.3 242.0 437.5" className="pp-s7" />
+        <polygon points="242.0 437.5 253.8 442.3 246.3 432.6" className="pp-s7" />
+        <polygon points="237.1 477.1 269.5 457.0 253.8 442.3" className="pp-s7" />
+        <polygon points="237.1 477.1 253.8 442.3 236.1 445.1" className="pp-s7" />
+        <polygon points="225.2 456.1 237.1 477.1 232.1 447.7" className="pp-s7" />
+        <polygon points="253.8 442.3 269.5 457.0 255.3 420.3" className="pp-s7" />
+        <polygon points="206.8 466.6 198.5 460.5 200.3 477.8" className="pp-s7" />
+        <polygon points="237.1 477.1 236.1 445.1 232.1 447.7" className="pp-s7" />
+        <polygon points="237.1 477.1 225.2 456.1 223.7 460.5" className="pp-s7" />
+        <polygon points="222.9 462.9 229.1 474.2 223.7 460.5" className="pp-s7" />
+        <polygon points="202.0 477.4 206.8 466.6 200.3 477.8" className="pp-s7" />
+        <polygon points="224.2 474.4 229.1 474.2 222.9 462.9" className="pp-s7" />
+        <polygon points="141.9 454.5 141.8 465.2 182.0 448.4" className="pp-s7" />
+        <polygon points="231.7 477.8 237.1 477.1 229.1 474.2" className="pp-s7" />
+        <polygon points="200.3 477.8 193.9 485.1 197.8 481.8" className="pp-s7" />
+        <polygon points="229.1 474.2 237.1 477.1 223.7 460.5" className="pp-s7" />
+        <polygon points="200.3 477.8 198.5 460.5 193.9 485.1" className="pp-s7" />
+        <polygon points="197.8 481.8 202.0 477.4 200.3 477.8" className="pp-s7" />
+        <polygon points="231.7 477.8 238.4 481.9 237.1 477.1" className="pp-s7" />
+        <polygon points="237.1 477.1 250.5 492.8 269.5 457.0" className="pp-s7" />
+        <polygon points="193.9 485.1 198.5 460.5 182.0 448.4" className="pp-s7" />
+        <polygon points="189.9 489.6 193.9 485.1 182.0 448.4" className="pp-s7" />
+        <polygon points="141.8 465.2 144.7 479.2 182.0 448.4" className="pp-s7" />
+        <polygon points="144.7 479.2 189.9 489.6 182.0 448.4" className="pp-s7" />
+        <polygon points="144.7 479.2 187.1 493.1 189.9 489.6" className="pp-s7" />
+        <polygon points="144.7 479.2 160.0 500.0 187.1 493.1" className="pp-s7" />
+        <polygon points="160.0 500.0 186.2 497.3 187.1 493.1" className="pp-s7" />
+        <polygon points="148.0 490.1 160.0 500.0 144.7 479.2" className="pp-s7" />
+        <polygon points="149.7 500.0 160.0 500.0 148.0 490.1" className="pp-s7" />
+        <polygon points="149.7 500.0 148.0 490.1 146.1 495.2" className="pp-s7" />
+    </svg>
+  );
+}

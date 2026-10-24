@@ -116,3 +116,44 @@
 .animate-fade-up-delay-2 {
   animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
 }
+
+/* Low-poly portrait — likeness stays tonal; dark mode warms midtones with ochre */
+.polygon-portrait {
+  --pp-0: hsl(30 8% 7%);
+  --pp-1: hsl(30 7% 16%);
+  --pp-2: hsl(30 6% 28%);
+  --pp-3: hsl(32 8% 42%);
+  --pp-4: hsl(36 10% 58%);
+  --pp-5: hsl(40 12% 72%);
+  --pp-6: hsl(44 16% 86%);
+  --pp-7: hsl(48 22% 95%);
+}
+
+.dark .polygon-portrait {
+  --pp-0: hsl(30 8% 10%);
+  --pp-1: hsl(30 7% 18%);
+  --pp-2: hsl(32 10% 30%);
+  --pp-3: color-mix(in srgb, hsl(34 12% 44%) 72%, hsl(var(--ochre)) 28%);
+  --pp-4: color-mix(in srgb, hsl(36 14% 58%) 62%, hsl(var(--ochre)) 38%);
+  --pp-5: color-mix(in srgb, hsl(40 16% 72%) 78%, hsl(var(--ochre)) 22%);
+  --pp-6: hsl(42 18% 82%);
+  --pp-7: hsl(42 22% 90%);
+}
+
+.polygon-portrait .pp-bg {
+  fill: hsl(var(--background));
+  transition: fill 0.45s ease;
+}
+
+.polygon-portrait polygon {
+  transition: fill 0.45s ease;
+}
+
+.polygon-portrait .pp-s0 { fill: var(--pp-0); }
+.polygon-portrait .pp-s1 { fill: var(--pp-1); }
+.polygon-portrait .pp-s2 { fill: var(--pp-2); }
+.polygon-portrait .pp-s3 { fill: var(--pp-3); }
+.polygon-portrait .pp-s4 { fill: var(--pp-4); }
+.polygon-portrait .pp-s5 { fill: var(--pp-5); }
+.polygon-portrait .pp-s6 { fill: var(--pp-6); }
+.polygon-portrait .pp-s7 { fill: var(--pp-7); }
