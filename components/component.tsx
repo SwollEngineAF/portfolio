@@ -31,7 +31,7 @@ export default function Component() {
       <NavBar toggleDarkMode={toggleDarkMode} />
       <HeroSection />
       <div className="mx-auto flex max-w-5xl flex-col gap-24 px-6 py-20 md:gap-32 md:px-12 md:py-28 lg:px-16">
-        <AboutMe />
+        <AboutMe isDarkMode={isDarkMode} />
         <Skills />
         <RecentProjects />
         <SocialMedia />
