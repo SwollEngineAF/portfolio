@@ -1,28 +1,19 @@
 "use client";
 
-import { useState } from "react";
 import Typewriter from "./typewriter";
-import Image from "next/image";
+import LowPolyPortrait from "./low-poly-portrait";
 
-const AboutMe = () => {
+type AboutMeProps = {
+  isDarkMode: boolean;
+};
+
+const AboutMe = ({ isDarkMode }: AboutMeProps) => {
   const texts = [
     "Syahiid Rasidi",
     "a Certified Technologist",
     "a SCADA Engineer",
     "an IT Engineer",
   ];
-
-  const images = ["/assets/Portrait.png"];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [fadeIn, setFadeIn] = useState(true);
-
-  const handleLoopChange = (loopNum: number) => {
-    setFadeIn(false);
-    setTimeout(() => {
-      setCurrentImageIndex(loopNum % images.length);
-      setFadeIn(true);
-    }, 500);
-  };
 
   return (
     <section id="about-me" className="scroll-mt-24">
@@ -39,12 +30,7 @@ const AboutMe = () => {
             }}
           >
             I am{" "}
-            <Typewriter
-              texts={texts}
-              period={2000}
-              setLoopNum={handleLoopChange}
-              className="text-ochre"
-            />
+            <Typewriter texts={texts} period={2000} className="text-ochre" />
           </h2>
           <div className="mt-8 space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
@@ -61,19 +47,16 @@ const AboutMe = () => {
         </div>
 
         <div className="relative w-full md:w-1/2">
-          <div
-            className={`relative aspect-[4/5] w-full overflow-hidden transition-opacity duration-500 ${
-              fadeIn ? "opacity-100" : "opacity-40"
-            }`}
-          >
-            <Image
-              src={images[currentImageIndex]}
-              alt={texts[currentImageIndex] ?? "Portrait"}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-              priority
+          <div className="relative aspect-[4/5] w-full">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 dark:opacity-100"
+              style={{
+                background:
+                  "radial-gradient(ellipse at 62% 26%, hsl(var(--ochre) / 0.2), transparent 64%)",
+              }}
             />
+            <LowPolyPortrait dark={isDarkMode} />
           </div>
         </div>
       </div>
