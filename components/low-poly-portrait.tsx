@@ -218,20 +218,51 @@ const LowPolyPortrait = ({ dark }: LowPolyPortraitProps) => {
         kickRef.current();
       }}
     >
-      {PORTRAIT_FACETS.map((facet, index) => {
-        const color = shade(facet, dark ? 1 : 0, dark ? REST_DARK : REST_LIGHT);
-        const [x1, y1, x2, y2, x3, y3] = facet.p;
-        return (
-          <polygon
-            key={index}
-            points={`${x1},${y1} ${x2},${y2} ${x3},${y3}`}
-            fill={color}
-            stroke={color}
-            strokeWidth={1.25}
-            strokeLinejoin="round"
+      <defs>
+        <filter
+          id="portrait-grain"
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+          colorInterpolationFilters="sRGB"
+        >
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.55"
+            numOctaves="3"
+            seed="7"
+            stitchTiles="stitch"
+            result="noise"
           />
-        );
-      })}
+          <feColorMatrix in="noise" type="saturate" values="0" result="gray" />
+          <feComposite
+            in="SourceGraphic"
+            in2="gray"
+            operator="arithmetic"
+            k1="0"
+            k2="1"
+            k3="0.92"
+            k4="-0.46"
+          />
+        </filter>
+      </defs>
+      <g filter="url(#portrait-grain)">
+        {PORTRAIT_FACETS.map((facet, index) => {
+          const color = shade(facet, dark ? 1 : 0, dark ? REST_DARK : REST_LIGHT);
+          const [x1, y1, x2, y2, x3, y3] = facet.p;
+          return (
+            <polygon
+              key={index}
+              points={`${x1},${y1} ${x2},${y2} ${x3},${y3}`}
+              fill={color}
+              stroke={color}
+              strokeWidth={1.25}
+              strokeLinejoin="round"
+            />
+          );
+        })}
+      </g>
     </svg>
   );
 };
