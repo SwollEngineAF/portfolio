@@ -28,6 +28,27 @@
     --ochre: 36 55% 45%;
     --paper: 48 33% 97%;
     --ink: 30 8% 8%;
+    --portrait-bg: #e9e3d8;
+    --portrait-bg-soft: #f2ecdf;
+    --portrait-bg-shade: #d9d0c0;
+    --portrait-halo: #d8c5a2;
+    --portrait-frame: #9a783f;
+    --portrait-hair: #211f1c;
+    --portrait-hair-mid: #302d28;
+    --portrait-hair-light: #51493c;
+    --portrait-skin: #c47a59;
+    --portrait-skin-light: #e0a07a;
+    --portrait-skin-mid: #b36e53;
+    --portrait-skin-shade: #87513f;
+    --portrait-shirt: #f5eee3;
+    --portrait-shirt-shade: #d0c3ad;
+    --portrait-suit: #2a2926;
+    --portrait-suit-mid: #3b3933;
+    --portrait-suit-shade: #1b1a18;
+    --portrait-tie: #a56829;
+    --portrait-tie-light: #c58b45;
+    --portrait-eye: #201b17;
+    --portrait-eye-light: #fff3df;
   }
 
   .dark {
@@ -53,6 +74,27 @@
     --ochre: 36 50% 52%;
     --paper: 30 8% 7%;
     --ink: 42 25% 94%;
+    --portrait-bg: #1f1e1a;
+    --portrait-bg-soft: #292720;
+    --portrait-bg-shade: #181816;
+    --portrait-halo: #3c3528;
+    --portrait-frame: #b38a4b;
+    --portrait-hair: #111212;
+    --portrait-hair-mid: #222323;
+    --portrait-hair-light: #484238;
+    --portrait-skin: #cf8663;
+    --portrait-skin-light: #e3a078;
+    --portrait-skin-mid: #bd7758;
+    --portrait-skin-shade: #915740;
+    --portrait-shirt: #ece2d1;
+    --portrait-shirt-shade: #b7a992;
+    --portrait-suit: #222322;
+    --portrait-suit-mid: #38362f;
+    --portrait-suit-shade: #131414;
+    --portrait-tie: #b87d36;
+    --portrait-tie-light: #d09a52;
+    --portrait-eye: #241a14;
+    --portrait-eye-light: #fff0db;
   }
 
   * {
