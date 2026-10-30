@@ -1,81 +1,116 @@
 "use client";
 
-import { FaMedium, FaLinkedin, FaGithub } from "react-icons/fa6";
-import React from "react";
-import {
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalTrigger,
-} from "./ui/animated-modal";
-import { FocusCards } from "./ui/focus-cards";
+import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
+import { motion } from "motion/react";
+
+const socialLinks = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/syahiidrasidi/",
+    icon: Linkedin,
+  },
+  {
+    label: "Medium",
+    href: "https://medium.com/@syahiid.rasidi",
+    icon: null,
+  },
+  {
+    label: "University GitHub · abin733",
+    href: "https://github.com/abin733",
+    icon: Github,
+  },
+  {
+    label: "Personal GitHub · SwollEngineAF",
+    href: "https://github.com/SwollEngineAF",
+    icon: Github,
+  },
+];
 
 const SocialMedia = () => {
-  const cards = [
-    {
-      title: "University GitHub",
-      description: "Visit abin733 GitHub",
-      href: "https://github.com/abin733",
-      src: "/assets/githubabin733.webp",
-      className: "bg-foreground text-background",
-    },
-    {
-      title: "Personal GitHub",
-      description: "Visit SwollEngineAF GitHub",
-      href: "https://github.com/SwollEngineAF",
-      src: "/assets/githubswollengineaf.webp",
-      className: "bg-ochre text-background",
-    },
-  ];
-
-  const linkClass =
-    "inline-flex items-center gap-2 border-b border-transparent pb-0.5 text-sm text-muted-foreground transition-colors hover:border-ochre hover:text-ochre";
-
   return (
-    <section id="links" className="scroll-mt-24">
-      <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-ochre">
-        Elsewhere
-      </p>
-      <h2 className="font-display text-3xl font-medium tracking-tight text-foreground md:text-4xl">
-        Links
-      </h2>
-      <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-border pt-8">
-        <Modal>
-          <ModalTrigger className={`${linkClass} cursor-pointer bg-transparent p-0`}>
-            <FaGithub className="h-4 w-4" />
-            <span>GitHub</span>
-          </ModalTrigger>
-          <ModalBody>
-            <ModalContent>
-              <h4 className="mb-8 text-center font-display text-lg font-medium text-foreground md:text-2xl">
-                Select a GitHub profile
-              </h4>
-              <FocusCards cards={cards} />
-            </ModalContent>
-          </ModalBody>
-        </Modal>
+    <motion.section
+      id="contact"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.65, ease: "easeOut" }}
+      className="scroll-mt-28"
+    >
+      <div className="relative overflow-hidden rounded-[2rem] bg-accent text-accent-foreground">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 -top-36 size-[28rem] rounded-full border border-background/10"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-10 -top-24 size-[20rem] rounded-full border border-background/10"
+        />
+        <div className="relative grid gap-12 p-6 sm:p-10 md:p-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:p-16">
+          <div>
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-foreground/65 sm:text-xs">
+              05 / Start a conversation
+            </p>
+            <h2 className="mt-6 max-w-2xl font-display text-4xl font-semibold leading-[0.95] tracking-[-0.065em] sm:text-5xl lg:text-7xl">
+              Let&apos;s make complex systems work beautifully.
+            </h2>
+            <p className="mt-5 max-w-xl text-sm leading-7 text-accent-foreground/75 sm:text-base sm:leading-8">
+              For roles, collaborations, or a thoughtful conversation about
+              engineering and technology, get in touch.
+            </p>
+            <motion.a
+              href="mailto:syahiid.rasidi@gmail.com"
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.98 }}
+              className="mt-8 inline-flex min-h-12 items-center gap-3 rounded-full bg-background px-5 text-sm font-semibold text-foreground transition-shadow hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background focus-visible:ring-offset-2 focus-visible:ring-offset-accent"
+            >
+              <Mail aria-hidden="true" className="size-4" />
+              syahiid.rasidi@gmail.com
+              <ArrowUpRight aria-hidden="true" className="size-4" />
+            </motion.a>
+          </div>
 
-        <a
-          href="https://www.linkedin.com/in/syahiidrasidi/"
-          className={linkClass}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaLinkedin className="h-4 w-4" />
-          <span>LinkedIn</span>
-        </a>
+          <div className="flex flex-col justify-end lg:pb-1">
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-foreground/65 sm:text-xs">
+              Elsewhere on the internet
+            </p>
+            <ul className="mt-4 divide-y divide-background/15 border-y border-background/15">
+              {socialLinks.map((link) => {
+                const Icon = link.icon;
 
-        <a
-          href="https://medium.com/@syahiid.rasidi"
-          className={linkClass}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaMedium className="h-4 w-4" />
-          <span>Medium</span>
-        </a>
+                return (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex min-h-14 items-center justify-between gap-4 py-3 text-sm font-medium transition-colors hover:text-background/65 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background"
+                    >
+                      <span className="inline-flex items-center gap-3">
+                        {Icon ? (
+                          <Icon aria-hidden="true" className="size-4" />
+                        ) : (
+                          <span
+                            aria-hidden="true"
+                            className="grid size-4 place-items-center font-display text-base font-bold"
+                          >
+                            M
+                          </span>
+                        )}
+                        {link.label}
+                      </span>
+                      <ArrowUpRight
+                        aria-hidden="true"
+                        className="size-4 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      />
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,70 +1,66 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { CgDarkMode } from "react-icons/cg";
+import { ArrowUpRight } from "lucide-react";
+import { motion, useScroll } from "motion/react";
 
-type NavBarProps = {
-  toggleDarkMode: () => void;
-};
-
-const NavBar: React.FC<NavBarProps> = ({ toggleDarkMode }) => {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+const NavBar = () => {
+  const { scrollYProgress } = useScroll();
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-[background,backdrop-filter,border-color] duration-500 ${
-        scrolled
-          ? "border-b border-border/80 bg-background/75 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent"
-      }`}
-    >
-      <nav className="mx-auto flex h-14 max-w-5xl items-center justify-between px-6 md:h-16 md:px-12 lg:px-16">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-background/75 backdrop-blur-xl">
+      <motion.div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-px origin-left bg-accent"
+        style={{ scaleX: scrollYProgress }}
+      />
+      <nav
+        aria-label="Primary navigation"
+        className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10"
+      >
         <a
-          href="#"
-          className={`font-display text-base tracking-tight text-foreground transition-opacity duration-500 md:text-lg ${
-            scrolled ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-          aria-hidden={!scrolled}
-          tabIndex={scrolled ? 0 : -1}
+          href="#top"
+          aria-label="Syahiid Rasidi, back to top"
+          className="flex shrink-0 items-center gap-2.5 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
-          Syahiid Rasidi
+          <span className="font-display text-xl font-bold tracking-[-0.08em] text-foreground">
+            SR<span className="text-accent">.</span>
+          </span>
+          <span className="hidden text-sm font-medium tracking-tight text-foreground min-[420px]:inline">
+            Syahiid Rasidi
+          </span>
         </a>
 
-        <div className="flex items-center gap-5 md:gap-8">
-          <a
-            href="#projects"
-            className="hidden text-sm text-muted-foreground transition-colors hover:text-ochre sm:inline"
-          >
+        <div className="flex items-center gap-3 text-xs font-medium text-muted-foreground sm:gap-5 sm:text-sm md:gap-6 lg:gap-7">
+          <a className="transition-colors hover:text-accent" href="#projects">
             Work
           </a>
           <a
+            className="hidden transition-colors hover:text-accent sm:inline-flex"
             href="#about-me"
-            className="hidden text-sm text-muted-foreground transition-colors hover:text-ochre sm:inline"
           >
             About
           </a>
           <a
-            href="mailto:syahiid.rasidi@gmail.com"
-            className="text-sm text-muted-foreground transition-colors hover:text-ochre"
+            className="hidden transition-colors hover:text-accent md:inline-flex"
+            href="#experience"
           >
-            Email
+            Experience
           </a>
-          <button
-            type="button"
-            onClick={toggleDarkMode}
-            aria-label="Toggle dark mode"
-            className="text-foreground/80 transition-colors hover:text-ochre"
+          <a
+            className="hidden transition-colors hover:text-accent lg:inline-flex"
+            href="#skills"
           >
-            <CgDarkMode className="h-5 w-5" />
-          </button>
+            Skills
+          </a>
         </div>
+
+        <a
+          href="#contact"
+          className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-3.5 py-2 text-xs font-semibold text-foreground transition-colors hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:px-4 sm:text-sm"
+        >
+          Contact
+          <ArrowUpRight aria-hidden="true" className="size-3.5" />
+        </a>
       </nav>
     </header>
   );

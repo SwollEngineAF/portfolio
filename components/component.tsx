@@ -1,46 +1,38 @@
-"use client";
-
-import { useState, useEffect } from "react";
+import { MotionConfig } from "motion/react";
 import AboutMe from "./aboutme";
-import Skills from "./skills";
-import { RecentProjects } from "./recentprojects";
-import SocialMedia from "./socialmedia";
-import NavBar from "./navbar";
 import HeroSection from "./herosection";
+import NavBar from "./navbar";
+import { RecentProjects } from "./recentprojects";
+import Skills from "./skills";
+import SocialMedia from "./socialmedia";
 
 export default function Component() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDarkMode(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    document.documentElement.classList.toggle("dark", newMode);
-    localStorage.setItem("theme", newMode ? "dark" : "light");
-  };
-
   return (
-    <div className="relative min-h-[100dvh] bg-background text-foreground">
-      <NavBar toggleDarkMode={toggleDarkMode} />
-      <HeroSection />
-      <div className="mx-auto flex max-w-5xl flex-col gap-24 px-6 py-20 md:gap-32 md:px-12 md:py-28 lg:px-16">
-        <AboutMe />
-        <Skills />
-        <RecentProjects />
-        <SocialMedia />
-      </div>
-      <footer className="mx-auto max-w-5xl border-t border-border px-6 py-10 md:px-12 lg:px-16">
-        <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Syahiid Rasidi
-        </p>
+    <MotionConfig reducedMotion="user">
+      <NavBar />
+      <main className="min-h-screen overflow-hidden">
+        <HeroSection />
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-24 px-5 py-16 sm:gap-28 sm:px-8 sm:py-20 lg:gap-32 lg:px-10 lg:py-24">
+          <AboutMe />
+          <RecentProjects />
+          <Skills />
+          <SocialMedia />
+        </div>
+      </main>
+      <footer className="border-t border-border/80">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-7 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
+          <p>© {new Date().getFullYear()} Syahiid Rasidi</p>
+          <p className="font-mono uppercase tracking-[0.16em]">
+            SCADA · IT · Product Engineering
+          </p>
+          <a
+            href="#top"
+            className="w-fit transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          >
+            Back to top ↑
+          </a>
+        </div>
       </footer>
-    </div>
+    </MotionConfig>
   );
 }
