@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 const links = [
@@ -32,11 +33,23 @@ export function Hero() {
             ))}
           </nav>
         </div>
-        <aside aria-label="Dossier details" className="hero-note">
-          <span className="note-index">FIELD NOTE / 01</span>
-          <span className="note-rule" />
-          <p>Engineering across <br />airports, industry <br />and product.</p>
-          <span className="note-coordinate">SCADA · INFRASTRUCTURE · SOFTWARE</span>
+        <aside aria-label="Profile portrait and dossier details" className="hero-note">
+          <div className="portrait-frame">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-UvBwfXTjKFeJ1nsxoTzk4GmGiEI4iL.png"
+              alt="Illustrated profile portrait of Syahiid Rasidi"
+              fill
+              priority
+              sizes="(max-width: 800px) 170px, 220px"
+              className="portrait-image"
+            />
+          </div>
+          <div className="hero-note-copy">
+            <span className="note-index">FIELD NOTE / 01</span>
+            <span className="note-rule" />
+            <p>Engineering across <br />airports, industry <br />and product.</p>
+            <span className="note-coordinate">SCADA · INFRASTRUCTURE · SOFTWARE</span>
+          </div>
         </aside>
       </div>
       <div className="hero-bottomline">

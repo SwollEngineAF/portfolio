@@ -253,12 +253,33 @@
 
 .hero-note {
   display: flex;
-  min-height: 185px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
+  gap: 18px;
+}
+
+.portrait-frame {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  box-shadow: 4px 4px 0 var(--shadow-ink);
+}
+
+.portrait-image {
+  object-fit: contain;
+}
+
+.hero-note-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   border-left: 1px solid var(--line);
-  padding: 0 0 0 19px;
+  padding-left: 19px;
 }
 
 .note-index,
@@ -722,6 +743,15 @@
 
   .hero-note {
     min-height: auto;
+    border: 0;
+    padding: 0;
+  }
+
+  .portrait-frame {
+    max-width: 220px;
+  }
+
+  .hero-note-copy {
     border-left: 0;
     border-top: 1px solid var(--line);
     padding: 16px 0 0;
