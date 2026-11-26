@@ -1,12 +1,19 @@
-import React from "react";
-import Component from "@/components/component";
+import { Capabilities } from "@/components/dossier/capabilities";
+import { CareerDossier } from "@/components/dossier/career-dossier";
+import { Hero } from "@/components/dossier/hero";
+import { SiteFooter } from "@/components/dossier/site-footer";
+import { SiteHeader } from "@/components/dossier/site-header";
 
-const HomePage = () => {
+export default function HomePage() {
   return (
-    <main className="relative min-h-screen">
-      <Component />
-    </main>
+    <>
+      <SiteHeader />
+      <main className="page-shell">
+        <Hero />
+        <Capabilities />
+        <CareerDossier />
+        <SiteFooter />
+      </main>
+    </>
   );
-};
-
-export default HomePage;
+}
